@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#6B21A8">
+<title>Need Help? — Cityfurnish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #6B21A8;
+    --purple-light: #7C3AED;
+    --purple-soft: #F3E8FF;
+    --purple-bg: #FAF5FF;
+    --dark: #1A1A2E;
+    --gray-900: #111827;
+    --gray-700: #374151;
+    --gray-500: #6B7280;
+    --gray-400: #9CA3AF;
+    --gray-200: #E5E7EB;
+    --gray-100: #F3F4F6;
+    --gray-50: #F9FAFB;
+    --white: #FFFFFF;
+    --green: #059669;
+    --whatsapp: #25D366;
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+  }
+
+  /* ===== LAYOUT ===== */
+  .page-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(145deg, var(--purple) 0%, #9333EA 60%, var(--purple-light) 100%);
+    padding: 32px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .hero-dot-1 {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+  }
+
+  .hero-dot-2 {
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+  }
+
+  .hero-dot-3 {
+    position: absolute;
+    bottom: 50px;
+    right: 24px;
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+
+  .logo {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo svg {
+    height: 26px;
+    width: auto;
+  }
+
+  .logo svg g {
+    fill: var(--white);
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .hero .subtext {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 400;
+    position: relative;
+  }
+
+  /* Wave divider */
+  .wave-divider {
+    display: block;
+    margin-top: -1px;
+    line-height: 0;
+  }
+
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 28px;
+  }
+
+  /* ===== CONTENT AREA WITH TEXTURE ===== */
+  .content-area {
+    position: relative;
+    background:
+      radial-gradient(circle, var(--gray-200) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: var(--white);
+    padding-bottom: 4px;
+  }
+
+  /* ===== SECTION LABEL ===== */
+  .section-label {
+    padding: 24px 24px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* ===== INTENT GRID (2-col compact) ===== */
+  .intent-grid {
+    padding: 0 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 10px;
+  }
+
+  .intent-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    min-height: 140px;
+    padding: 20px 10px 16px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .intent-btn:hover {
+    border-color: var(--purple-light);
+    background: var(--purple-bg);
+    box-shadow: 0 4px 16px rgba(107,33,168,0.08);
+  }
+
+  .intent-btn:active {
+    transform: scale(0.97);
+  }
+
+  .intent-btn .icon-circle {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    border-radius: 13px;
+    background: var(--purple-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .intent-btn:hover .icon-circle {
+    transform: scale(1.08);
+  }
+
+  .intent-btn .icon-circle svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    stroke: var(--purple);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .intent-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .intent-btn .btn-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.35;
+  }
+
+  .intent-btn .btn-desc {
+    font-size: 11px;
+    color: var(--gray-500);
+    line-height: 1.4;
+  }
+
+  /* ===== MODAL OVERLAY ===== */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-sheet {
+    background: var(--white);
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-width: 480px;
+    max-height: 85dvh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+
+  .modal-overlay.active .modal-sheet {
+    transform: translateY(0);
+  }
+
+  .modal-handle-area {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 4px;
+    cursor: grab;
+  }
+
+  .modal-handle {
+    width: 36px;
+    height: 4px;
+    border-radius: 100px;
+    background: var(--gray-300, #D1D5DB);
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px 16px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .modal-header h2 .modal-icon-wrap {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-header h2 .modal-icon-wrap svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--purple);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gray-100);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .modal-close:hover {
+    background: var(--gray-200);
+  }
+
+  .modal-body {
+    padding: 24px;
+  }
+
+  /* GIF Preview Area */
+  .gif-preview {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--gray-100);
+    margin-bottom: 24px;
+    position: relative;
+    border: 1px solid var(--gray-200);
+  }
+
+  .gif-preview img,
+  .gif-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gif-preview .gif-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--gray-400);
+    font-size: 13px;
+  }
+
+  .gif-preview .gif-placeholder svg {
+    width: 36px;
+    height: 36px;
+    opacity: 0.5;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-text {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.55;
+    padding-top: 3px;
+  }
+
+  .step-text strong {
+    color: var(--gray-900);
+    font-weight: 600;
+  }
+
+  /* Deep link CTA in modal */
+  .modal-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    margin-top: 24px;
+    background: var(--purple);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .modal-cta:hover {
+    background: var(--purple-light);
+  }
+
+  .modal-cta svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ===== STILL NEED HELP ===== */
+  .help-section {
+    padding: 28px 24px;
+    margin-top: 20px;
+    background: var(--gray-50);
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .help-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .help-section .help-subtext {
+    font-size: 13px;
+    color: var(--gray-500);
+    text-align: center;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    border: 1.5px solid var(--gray-200);
+    background: var(--white);
+    color: var(--gray-700);
+  }
+
+  .contact-btn:hover {
+    border-color: var(--purple-light);
+    color: var(--purple);
+  }
+
+  .contact-btn:active {
+    transform: scale(0.97);
+  }
+
+  .contact-btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .contact-btn .contact-label {
+    flex: 1;
+  }
+
+  .contact-btn .contact-label span {
+    display: block;
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .contact-btn .contact-arrow {
+    width: 18px;
+    height: 18px;
+    color: var(--gray-400);
+  }
+
+  .contact-btn.whatsapp {
+    background: #E7FCF0;
+    border-color: #B8F0D0;
+    color: #128C7E;
+  }
+
+  .contact-btn.whatsapp:hover {
+    background: #D1F7E3;
+  }
+
+  .contact-btn.orders {
+    background: var(--purple-soft);
+    border-color: #E0CBFF;
+    color: var(--purple);
+  }
+
+  .contact-btn.orders:hover {
+    background: #E9D5FF;
+  }
+
+  /* ===== REFER & EARN BANNER ===== */
+  .refer-section {
+    padding: 0 24px 28px;
+  }
+
+  .refer-banner {
+    background: linear-gradient(135deg, var(--purple) 0%, #9333EA 50%, var(--purple-light) 100%);
+    border-radius: 18px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .refer-banner::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+
+  .refer-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .refer-reward {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .refer-reward .rupee {
+    font-size: 18px;
+    font-weight: 800;
+    color: #FDE68A;
+  }
+
+  .refer-banner h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    position: relative;
+    letter-spacing: -0.4px;
+    line-height: 1.3;
+  }
+
+  .refer-banner p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    margin-bottom: 22px;
+    position: relative;
+  }
+
+  .refer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: var(--white);
+    color: var(--purple);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+
+  .refer-cta:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  .refer-cta:active {
+    transform: scale(0.98);
+  }
+
+  .refer-cta svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    padding: 20px 24px 24px;
+    text-align: center;
+    background: var(--gray-50);
+  }
+
+  .page-footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  .page-footer .footer-logo a {
+    display: inline-block;
+    line-height: 0;
+  }
+
+  .page-footer .footer-logo svg {
+    height: 18px;
+    width: auto;
+  }
+
+  .page-footer .footer-logo svg g {
+    fill: #000000;
+  }
+
+  .page-footer .footer-brand {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 4px;
+  }
+
+  /* ===== DESKTOP CENTERING ===== */
+  @media (min-width: 481px) {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 16px;
+      background: var(--gray-100);
+    }
+
+    .page-wrapper {
+      min-height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 20px 60px rgba(107,33,168,0.08);
+    }
+
+    .modal-overlay {
+      align-items: center;
+    }
+
+    .modal-sheet {
+      border-radius: 20px;
+      max-height: 80vh;
+      margin: 0 16px;
+    }
+
+    .modal-overlay.active .modal-sheet {
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HERO HEADER -->
+  <header class="hero">
+    <span class="hero-dot-1"></span>
+    <span class="hero-dot-2"></span>
+    <span class="hero-dot-3"></span>
+    <div class="logo">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 596 128" preserveAspectRatio="xMidYMid meet" aria-label="Cityfurnish"><g transform="translate(0,128) scale(0.1,-0.1)" fill="#FFFFFF" stroke="none"><path d="M2355 1205 c-5 -2 -27 -6 -48 -10 -39 -6 -107 -59 -129 -99 -7 -12 -14 -52 -17 -91 l-6 -70 -57 -3 -58 -3 0 -54 0 -55 60 0 60 0 0 -240 0 -240 60 0 60 0 0 240 0 240 90 0 90 0 0 55 0 55 -91 0 -92 0 5 51 c3 28 14 62 25 77 18 24 27 27 74 26 30 0 63 -4 74 -8 17 -6 24 0 43 39 l22 46 -42 18 c-44 19 -105 32 -123 26z"/><path d="M735 1192 c-55 -11 -76 -91 -35 -132 62 -62 162 21 120 100 -11 21 -56 38 -85 32z"/><path d="M4520 1187 c-51 -26 -61 -93 -18 -129 48 -41 128 -2 128 62 0 28 -29 70 -49 70 -5 0 -15 2 -23 5 -7 3 -24 -1 -38 -8z"/><path d="M5330 765 l0 -425 64 0 65 0 3 193 3 194 29 37 c49 65 136 85 206 48 63 -33 70 -62 70 -279 l0 -193 66 0 65 0 -3 213 c-3 210 -3 212 -32 270 -21 44 -40 66 -73 87 -89 57 -221 49 -294 -18 l-39 -34 0 166 0 166 -65 0 -65 0 0 -425z"/><path d="M1048 1103 c-28 -4 -28 -5 -28 -84 l0 -79 -55 0 -55 0 0 -55 0 -55 55 0 55 0 0 -150 c0 -189 11 -243 59 -292 57 -56 155 -73 243 -39 l27 10 -16 49 -16 49 -62 -5 c-58 -4 -63 -3 -83 23 -21 26 -22 39 -22 191 l0 164 91 0 90 0 -3 53 -3 52 -87 3 -88 3 0 84 0 85 -37 -1 c-21 -1 -50 -4 -65 -6z"/><path d="M4900 946 c-114 -24 -170 -81 -170 -171 0 -102 68 -155 231 -181 112 -18 144 -36 144 -84 0 -53 -39 -75 -128 -74 -78 1 -126 17 -175 59 l-30 25 -31 -42 c-17 -23 -31 -45 -31 -49 0 -12 68 -59 118 -82 70 -32 228 -32 294 1 110 54 147 171 84 265 -27 40 -103 71 -210 86 -96 14 -128 28 -140 64 -9 24 -6 31 17 55 25 25 34 27 105 27 64 0 84 -4 120 -25 l43 -24 34 39 c18 22 31 43 28 48 -10 17 -103 56 -158 66 -69 13 -74 13 -145 -3z"/><path d="M253 933 c-61 -21 -136 -92 -163 -155 -34 -78 -33 -203 2 -278 52 -114 149 -174 283 -174 85 0 129 14 198 61 l38 26 -42 43 -42 43 -42 -25 c-31 -18 -56 -24 -98 -24 -69 0 -103 12 -145 53 -91 88 -56 272 61 316 52 20 140 14 180 -13 l35 -24 42 43 42 43 -44 29 c-23 17 -58 35 -77 41 -47 16 -177 14 -228 -5z"/><path d="M3475 934 c-16 -8 -42 -27 -57 -42 l-28 -26 0 37 0 37 -60 0 -60 0 0 -300 0 -300 65 0 65 0 0 193 c0 175 2 195 20 225 38 61 133 88 207 57 19 -8 37 -15 39 -15 4 0 54 97 54 105 0 3 -19 15 -42 25 -54 24 -160 27 -203 4z"/><path d="M4030 941 c-41 -13 -84 -37 -104 -60 -23 -25 -36 -13 -36 32 0 26 -1 27 -60 27 l-60 0 0 -300 0 -300 65 0 65 0 0 178 c0 164 2 181 23 222 31 63 76 90 147 90 67 0 113 -26 141 -80 17 -30 19 -59 19 -222 l0 -188 66 0 66 0 -4 208 c-3 193 -5 210 -26 254 -55 112 -188 173 -302 139z"/><path d="M690 640 l0 -300 65 0 65 0 0 300 0 300 -65 0 -65 0 0 -300z"/><path d="M1370 933 c0 -4 52 -137 116 -296 l117 -288 -48 -112 c-26 -61 -54 -127 -62 -145 l-14 -33 71 3 71 3 53 125 c30 69 113 262 185 429 72 168 131 308 131 313 0 4 -29 8 -66 8 l-65 0 -26 -57 c-14 -32 -56 -133 -93 -226 l-67 -167 -16 42 c-8 24 -44 124 -80 223 l-65 180 -71 3 c-39 2 -71 -1 -71 -5z"/><path d="M2550 747 c0 -141 4 -207 15 -243 51 -170 263 -229 407 -114 l37 30 3 -38 3 -37 58 -3 57 -3 0 301 0 300 -59 0 -59 0 -4 -182 c-4 -204 -9 -220 -74 -278 -35 -31 -40 -32 -105 -28 -55 3 -73 8 -94 28 -55 51 -59 70 -63 273 l-4 187 -59 0 -59 0 0 -193z"/><path d="M4490 640 l0 -300 60 0 60 0 0 300 0 300 -60 0 -60 0 0 -300z"/></g></svg>
+    </div>
+    <h1>Need help with your order?</h1>
+    <p class="subtext">Select what you need below.</p>
+  </header>
+
+  <!-- Wave divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 480 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,16 Q60,28 120,16 Q180,4 240,16 Q300,28 360,16 Q420,4 480,16 L480,0 Z" fill="#7C3AED"/>
+    </svg>
+  </div>
+
+  <!-- Content area with texture -->
+  <div class="content-area">
+
+  <!-- Section label -->
+  <div class="section-label">What do you need?</div>
+
+  <!-- INTENT GRID (2-column compact) -->
+  <main class="intent-grid" role="list">
+
+    <button class="intent-btn" role="listitem"
+      data-modal="repair"
+      data-title="Repair or Service"
+      data-icon="repair"
+      data-gif="videos/repair.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → hover on the <strong>Profile icon</strong> → tap <strong>My Service Requests</strong>"
+      data-step2="Tap <strong>Create a New Request</strong> → select your <strong>Order No.</strong> → choose <strong>Request Type</strong>"
+      data-cta-text="Go to Service Requests"
+      data-cta-link="https://cityfurnish.com/service-requests"
+      aria-label="Repair or Service">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Repair or Service</span>
+        <span class="btn-desc">Something broken? We'll fix it.</span>
+      </div>
+    </button>
+
+    <button class="intent-btn" role="listitem"
+      data-modal="billing"
+      data-title="Billing & Subscription"
+      data-icon="billing"
+      data-gif="videos/billing.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → hover on the <strong>Profile icon</strong>"
+      data-step2="Tap <strong>Billing and Payments</strong> to view invoices, payment history, or update your plan"
+      data-cta-text="Go to Invoices"
+      data-cta-link="https://cityfurnish.com/invoices"
+      aria-label="Billing and Subscription">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Billing &amp; Subscription</span>
+        <span class="btn-desc">Invoices, payments &amp; plan details.</span>
+      </div>
+    </button>
+
+    <button class="intent-btn" role="listitem"
+      data-modal="relocation"
+      data-title="Relocation"
+      data-icon="relocation"
+      data-gif="videos/relocation.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → tap the <strong>Profile icon</strong> → tap <strong>My Service Requests</strong>"
+      data-step2="Tap <strong>Create a New Request</strong> → select your <strong>Order No.</strong> → choose <strong>Relocation</strong>"
+      data-cta-text="Go to Service Requests"
+      data-cta-link="https://cityfurnish.com/service-requests"
+      aria-label="Relocation">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Relocation</span>
+        <span class="btn-desc">Moving? Furniture moves with you.</span>
+      </div>
+    </button>
+
+    <button class="intent-btn" role="listitem"
+      data-modal="delivery"
+      data-title="Delivery or Pickup Status"
+      data-icon="delivery"
+      data-gif="videos/delivery.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → tap the <strong>Profile icon</strong>"
+      data-step2="Tap <strong>My Orders</strong> to view delivery status, tracking details, or schedule a pickup"
+      data-cta-text="View My Orders"
+      data-cta-link="https://cityfurnish.com/purchases"
+      aria-label="Delivery or Pickup Status">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Delivery or Pickup</span>
+        <span class="btn-desc">Track or schedule a pickup.</span>
+      </div>
+    </button>
+
+    <button class="intent-btn" role="listitem"
+      data-modal="plan"
+      data-title="Upgrade or Cancel Plan"
+      data-icon="plan"
+      data-gif="videos/plan.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → tap the <strong>Profile icon</strong> → tap <strong>My Service Requests</strong>"
+      data-step2="Tap <strong>Create a New Request</strong> → select your <strong>Order No.</strong> → choose <strong>Request Type</strong>"
+      data-cta-text="Go to Service Requests"
+      data-cta-link="https://cityfurnish.com/service-requests"
+      aria-label="Upgrade or Cancel Plan">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Upgrade or Cancel</span>
+        <span class="btn-desc">Extend, swap, or wrap up.</span>
+      </div>
+    </button>
+
+    <button class="intent-btn" role="listitem"
+      data-modal="refund"
+      data-title="Refunds & Cancellations"
+      data-icon="refund"
+      data-gif="videos/refund.mp4"
+      data-step1="Open <strong>cityfurnish.com</strong> → tap the <strong>Profile icon</strong> → tap <strong>My Orders</strong>"
+      data-step2="Find your order → check <strong>Refund Status</strong>"
+      data-cta-text="Go to My Orders"
+      data-cta-link="https://cityfurnish.com/purchases"
+      aria-label="Refunds and Cancellations">
+      <span class="icon-circle"></span>
+      <div class="btn-text">
+        <span class="btn-title">Refunds &amp; Cancellations</span>
+        <span class="btn-desc">Get a refund or cancel.</span>
+      </div>
+    </button>
+
+  </main>
+
+  </div><!-- end content-area -->
+
+  <!-- STILL NEED HELP -->
+  <section class="help-section">
+    <h3>Still need help?</h3>
+    <p class="help-subtext">We're just a tap away.</p>
+    <div class="contact-grid">
+      <a href="https://wa.me/918448498702" class="contact-btn whatsapp" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="contact-label">WhatsApp Support<span>Chat with us instantly</span></span>
+        <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="https://cityfurnish.com/purchases" class="contact-btn orders" aria-label="View My Orders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        <span class="contact-label">My Orders<span>View orders, track status</span></span>
+        <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- REFER & EARN BANNER -->
+  <section class="refer-section">
+    <div class="refer-banner">
+      <div class="refer-reward">
+        Earn <span class="rupee">&#8377;500</span> per referral
+      </div>
+      <h3>Good friends don't let friends buy furniture.</h3>
+      <p>Refer someone to Cityfurnish and you both earn &#8377;500. It's a win-win — like renting a couch that's already broken in.</p>
+      <a href="https://cityfurnish.com/referral" class="refer-cta">
+        Refer &amp; Earn &#8377;500
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-logo">
+      <a href="https://cityfurnish.com" aria-label="Cityfurnish">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 596 128" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,128) scale(0.1,-0.1)" fill="#6B21A8" stroke="none"><path d="M2355 1205 c-5 -2 -27 -6 -48 -10 -39 -6 -107 -59 -129 -99 -7 -12 -14 -52 -17 -91 l-6 -70 -57 -3 -58 -3 0 -54 0 -55 60 0 60 0 0 -240 0 -240 60 0 60 0 0 240 0 240 90 0 90 0 0 55 0 55 -91 0 -92 0 5 51 c3 28 14 62 25 77 18 24 27 27 74 26 30 0 63 -4 74 -8 17 -6 24 0 43 39 l22 46 -42 18 c-44 19 -105 32 -123 26z"/><path d="M735 1192 c-55 -11 -76 -91 -35 -132 62 -62 162 21 120 100 -11 21 -56 38 -85 32z"/><path d="M4520 1187 c-51 -26 -61 -93 -18 -129 48 -41 128 -2 128 62 0 28 -29 70 -49 70 -5 0 -15 2 -23 5 -7 3 -24 -1 -38 -8z"/><path d="M5330 765 l0 -425 64 0 65 0 3 193 3 194 29 37 c49 65 136 85 206 48 63 -33 70 -62 70 -279 l0 -193 66 0 65 0 -3 213 c-3 210 -3 212 -32 270 -21 44 -40 66 -73 87 -89 57 -221 49 -294 -18 l-39 -34 0 166 0 166 -65 0 -65 0 0 -425z"/><path d="M1048 1103 c-28 -4 -28 -5 -28 -84 l0 -79 -55 0 -55 0 0 -55 0 -55 55 0 55 0 0 -150 c0 -189 11 -243 59 -292 57 -56 155 -73 243 -39 l27 10 -16 49 -16 49 -62 -5 c-58 -4 -63 -3 -83 23 -21 26 -22 39 -22 191 l0 164 91 0 90 0 -3 53 -3 52 -87 3 -88 3 0 84 0 85 -37 -1 c-21 -1 -50 -4 -65 -6z"/><path d="M4900 946 c-114 -24 -170 -81 -170 -171 0 -102 68 -155 231 -181 112 -18 144 -36 144 -84 0 -53 -39 -75 -128 -74 -78 1 -126 17 -175 59 l-30 25 -31 -42 c-17 -23 -31 -45 -31 -49 0 -12 68 -59 118 -82 70 -32 228 -32 294 1 110 54 147 171 84 265 -27 40 -103 71 -210 86 -96 14 -128 28 -140 64 -9 24 -6 31 17 55 25 25 34 27 105 27 64 0 84 -4 120 -25 l43 -24 34 39 c18 22 31 43 28 48 -10 17 -103 56 -158 66 -69 13 -74 13 -145 -3z"/><path d="M253 933 c-61 -21 -136 -92 -163 -155 -34 -78 -33 -203 2 -278 52 -114 149 -174 283 -174 85 0 129 14 198 61 l38 26 -42 43 -42 43 -42 -25 c-31 -18 -56 -24 -98 -24 -69 0 -103 12 -145 53 -91 88 -56 272 61 316 52 20 140 14 180 -13 l35 -24 42 43 42 43 -44 29 c-23 17 -58 35 -77 41 -47 16 -177 14 -228 -5z"/><path d="M3475 934 c-16 -8 -42 -27 -57 -42 l-28 -26 0 37 0 37 -60 0 -60 0 0 -300 0 -300 65 0 65 0 0 193 c0 175 2 195 20 225 38 61 133 88 207 57 19 -8 37 -15 39 -15 4 0 54 97 54 105 0 3 -19 15 -42 25 -54 24 -160 27 -203 4z"/><path d="M4030 941 c-41 -13 -84 -37 -104 -60 -23 -25 -36 -13 -36 32 0 26 -1 27 -60 27 l-60 0 0 -300 0 -300 65 0 65 0 0 178 c0 164 2 181 23 222 31 63 76 90 147 90 67 0 113 -26 141 -80 17 -30 19 -59 19 -222 l0 -188 66 0 66 0 -4 208 c-3 193 -5 210 -26 254 -55 112 -188 173 -302 139z"/><path d="M690 640 l0 -300 65 0 65 0 0 300 0 300 -65 0 -65 0 0 -300z"/><path d="M1370 933 c0 -4 52 -137 116 -296 l117 -288 -48 -112 c-26 -61 -54 -127 -62 -145 l-14 -33 71 3 71 3 53 125 c30 69 113 262 185 429 72 168 131 308 131 313 0 4 -29 8 -66 8 l-65 0 -26 -57 c-14 -32 -56 -133 -93 -226 l-67 -167 -16 42 c-8 24 -44 124 -80 223 l-65 180 -71 3 c-39 2 -71 -1 -71 -5z"/><path d="M2550 747 c0 -141 4 -207 15 -243 51 -170 263 -229 407 -114 l37 30 3 -38 3 -37 58 -3 57 -3 0 301 0 300 -59 0 -59 0 -4 -182 c-4 -204 -9 -220 -74 -278 -35 -31 -40 -32 -105 -28 -55 3 -73 8 -94 28 -55 51 -59 70 -63 273 l-4 187 -59 0 -59 0 0 -193z"/><path d="M4490 640 l0 -300 60 0 60 0 0 300 0 300 -60 0 -60 0 0 -300z"/></g></svg>
+      </a>
+    </div>
+    <p class="footer-brand">A leading Furniture and Appliances Rental Brand in India.</p>
+  </footer>
+</div>
+
+<!-- ===== MODAL (single reusable) ===== -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-sheet" id="modalSheet">
+    <div class="modal-handle-area"><div class="modal-handle"></div></div>
+    <div class="modal-header">
+      <h2><span class="modal-icon-wrap" id="modalIcon"></span> <span id="modalTitle"></span></h2>
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="gif-preview" id="gifPreview">
+        <!-- GIF loads here dynamically -->
+      </div>
+      <div class="steps" id="modalSteps">
+        <!-- Steps load here dynamically -->
+      </div>
+      <a class="modal-cta" id="modalCta" href="#" target="_blank" rel="noopener">
+        <span id="modalCtaText"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ===== SVG ICON MAP (Lucide Icons v0.575.0 — ISC License) =====
+  var icons = {
+    repair:     '<svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg>',
+    billing:    '<svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>',
+    relocation: '<svg viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
+    delivery:   '<svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
+    plan:       '<svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>',
+    refund:     '<svg viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8"/><path d="M12 17.5 8 15h1a4 4 0 0 0 0-8"/><path d="M8 11h8"/></svg>'
+  };
+
+  // Render icons into button icon-circles on load
+  document.querySelectorAll('.intent-btn').forEach(function(btn) {
+    var iconKey = btn.dataset.icon;
+    if (icons[iconKey]) {
+      btn.querySelector('.icon-circle').innerHTML = icons[iconKey];
+    }
+  });
+
+  var overlay = document.getElementById('modalOverlay');
+  var sheet   = document.getElementById('modalSheet');
+  var closeBtn = document.getElementById('modalClose');
+
+  // Populate and open modal
+  function openModal(btn) {
+    var title   = btn.dataset.title;
+    var iconKey = btn.dataset.icon;
+    var gif     = btn.dataset.gif;
+    var step1   = btn.dataset.step1;
+    var step2   = btn.dataset.step2;
+    var ctaText = btn.dataset.ctaText;
+    var ctaLink = btn.dataset.ctaLink;
+
+    // Modal icon
+    var iconWrap = document.getElementById('modalIcon');
+    iconWrap.innerHTML = icons[iconKey] || '';
+
+    document.getElementById('modalTitle').textContent = title;
+
+    // Video/GIF area — supports both MP4 and GIF formats
+    var gifPreview = document.getElementById('gifPreview');
+    if (gif && !gif.startsWith('placeholder')) {
+      var isVideo = gif.match(/\.(mp4|webm|mov)(\?|$)/i);
+      if (isVideo) {
+        gifPreview.innerHTML = '<video src="' + gif + '" autoplay loop muted playsinline preload="metadata" alt="' + title + ' walkthrough"></video>';
+      } else {
+        gifPreview.innerHTML = '<img src="' + gif + '" alt="' + title + ' walkthrough" loading="lazy">';
+      }
+    } else {
+      gifPreview.innerHTML =
+        '<div class="gif-placeholder">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+            '<polygon points="5 3 19 12 5 21 5 3"/>' +
+          '</svg>' +
+          'Video walkthrough coming soon' +
+        '</div>';
+    }
+
+    // Steps
+    var stepsContainer = document.getElementById('modalSteps');
+    stepsContainer.innerHTML =
+      '<div class="step">' +
+        '<span class="step-number">1</span>' +
+        '<span class="step-text">' + step1 + '</span>' +
+      '</div>' +
+      '<div class="step">' +
+        '<span class="step-number">2</span>' +
+        '<span class="step-text">' + step2 + '</span>' +
+      '</div>';
+
+    // CTA
+    document.getElementById('modalCtaText').textContent = ctaText;
+    document.getElementById('modalCta').href = ctaLink;
+
+    // Show
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    // Stop any playing video to save bandwidth
+    var vid = document.querySelector('#gifPreview video');
+    if (vid) { vid.pause(); vid.removeAttribute('src'); vid.load(); }
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Event listeners
+  document.querySelectorAll('.intent-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { openModal(this); });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+  });
+
+  // Swipe-to-dismiss on mobile
+  var startY = 0;
+  var currentY = 0;
+  var isDragging = false;
+
+  sheet.addEventListener('touchstart', function(e) {
+    if (sheet.scrollTop <= 0) {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }
+  }, { passive: true });
+
+  sheet.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    currentY = e.touches[0].clientY;
+    var diff = currentY - startY;
+    if (diff > 0) {
+      sheet.style.transform = 'translateY(' + diff + 'px)';
+    }
+  }, { passive: true });
+
+  sheet.addEventListener('touchend', function() {
+    if (!isDragging) return;
+    isDragging = false;
+    var diff = currentY - startY;
+    if (diff > 120) {
+      closeModal();
+    }
+    sheet.style.transform = '';
+    startY = 0;
+    currentY = 0;
+  });
+})();
+</script>
+
+</body>
+</html>
